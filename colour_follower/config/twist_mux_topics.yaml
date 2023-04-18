@@ -20,7 +20,7 @@ twist_mux:
         topic   : recovery_vel
         timeout : 1.5
         priority: 20
-      # wanderer:
-      #   topic   : wander_vel
-      #   timeout : 0.5
-      #   priority: 10
+      navigator:
+         topic   : cmd_nav_vel
+         timeout : 5
+         priority: 30

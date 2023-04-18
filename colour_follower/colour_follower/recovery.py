@@ -26,7 +26,7 @@ class Recovery(Node):
         avg_left = sum(msg.ranges[85:95]) / 10
         avg_right = sum(msg.ranges[265:275]) / 10
 
-        if min_front < 0.70:
+        if min_front < 0.80:
             if not self.rotate:
                 self.rotate = True
                 self.turn = 0.2 if avg_left > avg_right else -0.2

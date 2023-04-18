@@ -12,7 +12,7 @@ os.environ["TURTLEBOT3_MODEL"] = "waffle"
 def generate_launch_description():
     navigation = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('turtlebot3_navigation2'), 'launch', 'navigation2.launch.py')]),
+            get_package_share_directory('colour_follower'), 'navigation2.launch.py')]),
         launch_arguments={
             "use_sim_time": "true",
             "map": os.path.join(
@@ -20,6 +20,11 @@ def generate_launch_description():
             "params_file": os.path.join(
             get_package_share_directory('colour_follower'), 'config/waffle.yaml')
         }.items(),
+    )
+    # My stuff
+    twist_mux = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            get_package_share_directory('colour_follower'), '/twist_mux_launch.py'])
     )
     change_model_type = ExecuteProcess(
         cmd=[[
@@ -32,6 +37,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        twist_mux,
         navigation,
         change_model_type,
     ])
