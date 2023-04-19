@@ -33,9 +33,11 @@ setup(
         'console_scripts': [
             "wanderer = colour_follower.wanderer:main",
             "drive_forward = colour_follower.drive_forward:main",
+            "rotate = colour_follower.rotate:main",
             "recovery = colour_follower.recovery:main",
             "colour_chaser = colour_follower.colour_chaser:main",
-            "colour_nav = colour_follower.colour_nav:main"
+            "colour_nav = colour_follower.colour_nav:main",
+            "colour_rotate = colour_follower.colour_rotate:main"
         ],
     },
 )

@@ -8,6 +8,10 @@
 twist_mux:
   ros__parameters:
     topics:
+      rotate:
+        topic   : rotate_vel
+        timeout : 0.5
+        priority: 8
       forward:
         topic   : forward_vel
         timeout : 0.5
@@ -21,6 +25,6 @@ twist_mux:
         timeout : 1.5
         priority: 20
       navigator:
-         topic   : cmd_nav_vel
-         timeout : 5
+         topic   : cmd_vel_nav
+         timeout : 5.0
          priority: 30
